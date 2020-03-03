@@ -1,20 +1,20 @@
-const Sequelize = require('sequelize')
-const dataBaseConfig = require('../config/database')
-const User = require('../app/models/User')
-const Recipient = require('../app/models/Recipients')
+const Sequelize = require('sequelize');
+const dataBaseConfig = require('../config/database');
+const User = require('../app/models/User');
+const Recipient = require('../app/models/Recipients');
 
-const models = [User, Recipient]
+const models = [User, Recipient];
 
-class dataBase {
-   constructor(){
-      this.init()
+class DataBase {
+   constructor() {
+      this.init();
    }
 
-   init(){
+   init() {
       this.connection = new Sequelize(dataBaseConfig);
 
-      models.map(model => model.init(this.connection))
+      models.map((model) => model.init(this.connection));
    }
 }
 
-module.exports = new dataBase()
+module.exports = new DataBase();

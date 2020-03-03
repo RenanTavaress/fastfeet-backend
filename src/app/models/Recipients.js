@@ -2,7 +2,7 @@ const { Model } = require('sequelize');
 const Sequelize = require('sequelize');
 
 class Recipient extends Model {
-   static init(sequelize){
+   static init(sequelize) {
       super.init({
          nome: Sequelize.STRING,
          rua: Sequelize.STRING,
@@ -12,8 +12,8 @@ class Recipient extends Model {
          cidade: Sequelize.STRING,
          cep: Sequelize.STRING,
       }, {
-         sequelize
-      })
+         sequelize,
+      });
 
       return this;
    }

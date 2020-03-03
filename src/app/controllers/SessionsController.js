@@ -1,38 +1,37 @@
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
 
 
-const User = require('../models/User')
-const auth = require('../../config/auth')
+const User = require('../models/User');
+const auth = require('../../config/auth');
 
 class SessionsController {
-   async store(req, res){
-      const { password, email  } = req.body;
+   async store(req, res) {
+      const { password, email } = req.body;
 
-      const user = await User.findOne({ where : { email }});
+      const user = await User.findOne({ where: { email } });
 
-      if(!user){
-         return res.status(401).json({erro: 'User not Found'});
+      if (!user) {
+         return res.status(401).json({ erro: 'User not Found' });
       }
 
-      if(!(await user.checkPassword(password))){
-         return res.status(401).json({erro: 'Password found not match'});
+      if (!(await user.checkPassword(password))) {
+         return res.status(401).json({ erro: 'Password found not match' });
       }
 
 
-      const {id, name } = user;
+      const { id, name } = user;
 
       return res.json({
-         user:{
+         user: {
             id,
             name,
             email,
          },
 
          token: jwt.sign({ id }, auth.secret, {
-            expiresIn: auth.expireIn
+            expiresIn: auth.expireIn,
          }),
       });
-
    }
 }
 module.exports = new SessionsController();

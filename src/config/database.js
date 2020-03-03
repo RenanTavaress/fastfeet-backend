@@ -5,9 +5,9 @@ module.exports = {
    username: 'postgres',
    password: 'docker',
    database: 'users',
-   define:{
+   define: {
       timestamps: true,
       underscored: true,
-      underscoredAll: true
-   }
-}
+      underscoredAll: true,
+   },
+};
