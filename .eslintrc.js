@@ -24,7 +24,6 @@ module.exports = {
     "camelcase": "off",
     "no-unused-vars":["error", {"argsIgnorePattern":"next"}],
     "no-multiple-empty-lines": [2, {"max": 99999, "maxEOF": 0}],
-    "linebreak-style": ["error", "windows"]
-    
+    "linebreak-style": 0
   },
 };
