@@ -2,5 +2,5 @@ node_modules
 
 .eslintrc.js
 
-tmp/uploads/*
-!uploads/.gitkeep
+*tmp/uploads/*
+!tmp/uploads/.gitkeep
