@@ -4,9 +4,10 @@ const User = require('../app/models/User');
 const Recipient = require('../app/models/Recipients');
 const File = require('../app/models/File');
 const DeliveryMan = require('../app/models/DeliveryMan');
+const Delivery = require('../app/models/Delivery');
 
 
-const models = [User, Recipient, File, DeliveryMan];
+const models = [User, Recipient, File, DeliveryMan, Delivery];
 
 class DataBase {
    constructor() {
